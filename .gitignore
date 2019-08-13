@@ -143,6 +143,11 @@ test_bind_after_connect_tcp
 test_sodium
 test_zmq_poll_fd
 test_reconnect_ivl
+test_address_tipc
+test_app_meta
+test_security_zap
+test_socket_null
+test_xpub_verbose
 tests/test*.log
 tests/test*.trs
 src/platform.hpp*
@@ -180,3 +185,9 @@ zeromq-*.zip
 core
 build
 test-suite.log
+external/unity/libunity.a
+unittests/*.log
+unittests/*.trs
+unittest_mtrie
+unittest_poller
+unittest_ypipe
