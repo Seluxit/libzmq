@@ -98,6 +98,7 @@ test_pair_tipc
 test_reqrep_device_tipc
 test_reqrep_tipc
 test_router_handover
+test_router_handover_leak
 test_router_mandatory_tipc
 test_shutdown_stress_tipc
 test_sub_forward_tipc

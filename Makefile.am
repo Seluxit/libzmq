@@ -380,6 +380,7 @@ test_apps = \
 	tests/test_router_mandatory \
 	tests/test_router_mandatory_hwm \
 	tests/test_router_handover \
+	tests/test_router_handover_leak \
 	tests/test_probe_router \
 	tests/test_stream \
 	tests/test_stream_empty \
@@ -520,6 +521,10 @@ tests_test_router_mandatory_hwm_LDADD = src/libzmq.la
 tests_test_router_handover_SOURCES = tests/test_router_handover.cpp
 tests_test_router_handover_LDADD = src/libzmq.la ${UNITY_LIBS}
 tests_test_router_handover_CPPFLAGS = ${UNITY_CPPFLAGS}
+
+tests_test_router_handover_leak_SOURCES = tests/test_router_handover_leak.cpp
+tests_test_router_handover_leak_LDADD = src/libzmq.la ${UNITY_LIBS}
+tests_test_router_handover_leak_CPPFLAGS = ${UNITY_CPPFLAGS}
 
 tests_test_probe_router_SOURCES = tests/test_probe_router.cpp
 tests_test_probe_router_LDADD = src/libzmq.la

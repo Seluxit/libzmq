@@ -141,8 +141,12 @@ int zmq::router_t::xsetsockopt (int option_,
 
         case ZMQ_ROUTER_HANDOVER:
             if (is_int && value >= 0) {
-                handover = (value != 0);
-                return 0;
+                if (!options.connected) {
+                    // We expect nothing is bound yet
+                    handover = (value != 0);
+                    options.handover = handover;
+                    return 0;
+                }
             }
             break;
 

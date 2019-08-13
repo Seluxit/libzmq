@@ -255,7 +255,9 @@ void zmq::session_base_t::pipe_terminated (pipe_t *pipe_)
         // Remove the pipe from the detached pipes set
         terminating_pipes.erase (pipe_);
 
-    if (!is_terminating () && options.raw_socket) {
+    if (!is_terminating () &&
+        (options.raw_socket || options.handover)) {
+
         if (engine) {
             engine->terminate ();
             engine = NULL;
