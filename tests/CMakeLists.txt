@@ -71,10 +71,11 @@ set(tests
         test_sodium
         test_monitor
 		test_socket_null
+        test_disconnect_during_multipart
 	test_reconnect_ivl
 )
 if(ZMQ_HAVE_CURVE)
-  list(APPEND tests 
+  list(APPEND tests
           test_security_curve)
 endif()
 if(NOT WIN32)
@@ -146,10 +147,10 @@ if(WIN32)
     link_libraries(ws2_32.lib)
 endif()
 
-add_library (unity 
-    STATIC 
-    "${CMAKE_CURRENT_LIST_DIR}/../external/unity/unity.c" 
-    "${CMAKE_CURRENT_LIST_DIR}/../external/unity/unity.h" 
+add_library (unity
+    STATIC
+    "${CMAKE_CURRENT_LIST_DIR}/../external/unity/unity.c"
+    "${CMAKE_CURRENT_LIST_DIR}/../external/unity/unity.h"
     "${CMAKE_CURRENT_LIST_DIR}/../external/unity/unity_internals.h")
 set_target_properties (unity PROPERTIES
     PUBLIC_HEADER "${CMAKE_CURRENT_LIST_DIR}/../external/unity/unity.h")

@@ -427,7 +427,11 @@ test_apps = \
 	tests/test_bind_after_connect_tcp \
 	tests/test_sodium \
 	tests/test_reconnect_ivl \
-	tests/test_socket_null
+	tests/test_socket_null \
+	tests/test_disconnect_during_multipart
+
+tests_test_disconnect_during_multipart_SOURCES = tests/test_disconnect_during_multipart.cpp
+tests_test_disconnect_during_multipart_LDADD = src/libzmq.la
 
 UNITY_CPPFLAGS = -I$(top_srcdir)/external/unity -DUNITY_USE_COMMAND_LINE_ARGS -DUNITY_EXCLUDE_FLOAT
 UNITY_LIBS = $(top_builddir)/external/unity/libunity.a
